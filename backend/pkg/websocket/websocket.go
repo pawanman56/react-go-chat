@@ -8,13 +8,12 @@ import (
 	"strings"
 
 	"github.com/gorilla/websocket"
-	"golang.org/x/text/message"
 )
 
 var upgrader = websocket.Upgrader(
 	ReadBufferSize: 1024,
 	WriteBufferSize: 1024,
-	CheckOrigin: func (r *http.Request) bool { return true },
+	CheckOrigin: func (r *http.Request) bool { return true }
 )
 
 func Upgrade(w http.ResponseWriter, r *http.Request) (*websocket.Conn, error) {

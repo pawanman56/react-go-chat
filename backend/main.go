@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/pawanman56/react-go-chat/backend/pkg/websocket"
+	"github.com/TutorialEdge/realtime-chat-go-react/pkg/websocket"
 )
 
 func serveWs(w http.ResponseWriter, r *http.Request) {
-	ws, err := websocket.Upgrade(w, r, nil)
+	ws, err := websocket.Upgrade(w, r)
 
 	if err != nil {
 		fmt.Fprintf(w, "%+V\n", err)
